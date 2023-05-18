@@ -66,6 +66,14 @@ section.home{
     align-items: center;
     z-index: 100;
 }
+.home.active .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0px 8%;
+    background-color: var(--bg-clr-2);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+}
 .home .navbar .logo img{
     width: 120px;
     height: auto;

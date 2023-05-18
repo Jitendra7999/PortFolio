@@ -15,3 +15,15 @@ for(let i =0 ; i<menuListItem.length;i++){
 function menuItemClicked(){
     menuList.classList.remove('active')
 }
+
+let homeSection = document.querySelector('.home');
+window.addEventListener('scroll',pageScrollFunction)
+window.addEventListener('load',pageScrollFunction)
+
+function pageScrollFunction(){
+  if(window.scrollY > 80 ){
+    homeSection.classList.add('active')
+  }else{
+    homeSection.classList.remove('active')
+  }
+}
