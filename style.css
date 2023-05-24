@@ -49,6 +49,29 @@ body{
     color: var(--primary-light-clr);
     border: 1px solid var(--primary-light-clr);
 }
+.section-heading h1{
+    position: relative;
+    font-size: 26px;
+    letter-spacing: 1px;
+    margin-left: 60px;
+    color: var(--main-heading-clr);
+    margin-bottom: 20px;
+}
+.section-heading h1::before{
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 70%;
+    background-color: var(--main-heading-clr);
+    right:calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+}
+.section-heading p{
+	color: var(--section-heading);
+	margin-bottom: 40px;
+	max-width: 700px;
+}
 /* ===========Reusable Code Ends========== */
 
 /* ========== Home Section Style Starts ============ */
@@ -65,6 +88,23 @@ section.home{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+}
+.home.active .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0px 8%;
+    background-color: var(--bg-clr-2);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+    animation: animateMenu 0.6s ease-in;
+}
+@keyframes animateMenu{
+    0%{
+        transform: translateY(-100px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
 }
 .home .navbar .logo img{
     width: 120px;
@@ -99,11 +139,14 @@ section.home{
    font-size: 20px; 
 }
 .home .hero{
-    /* position: relative; */
+    position: relative;
     width: 100%;
     min-height: calc(100vh - 70px);  /* navbar height 70 px*/
     display: flex;
     align-items: center;
+}
+.home.active .hero{
+    margin-top:70px ;
 }
 .home .hero .hero-img{
     width: 100%;
@@ -195,6 +238,180 @@ section.home{
    }
 }
 /* ========== Home Section Style Ends ============ */
+section.about{
+    padding:70px 8% 50px;
+    background-color: var(--bg-clr-1);
+}
+.about .about-contents{
+    display: flex;
+    justify-content: space-between;
+}
+.about-contents .about-info{
+    flex-basis: 55%;
+}
+.about-contents .about-info p{
+    color: var(--text-clr);
+    margin-bottom: 25px;
+}
+.about-personal-info{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px 20px;
+}
+.about-personal-info div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.about-personal-info div span{
+    color: var(--text-clr);
+    letter-spacing: 1px;
+    word-wrap: break-all;
+}
+.about-info .social-media{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.about-info .social-media a{
+    width: 35px;
+    height: 35px;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 15px;
+    border-radius: 50%;
+    background-color: var(--primary-base-clr);
+    transition: 0.3s;
+}
+.about-info .social-media a i{
+    color: var(--main-heading-clr);
+    font-size: 16px;
+    line-height: 35px;
+    border:1px solid transparent;
+    transition: 0.3s;
+}
+.about-info .social-media a:hover{
+    transform: translateY(-5px);
+    background-color: transparent;
+    color: var(--primary-light-clr);
+    border:1px solid var(--primary-light-clr)
+}
+.about-info .social-media a:hover i{
+    color: var(--primary-light-clr);
+}
+.about-contents .about-experience{
+    position: relative;
+    flex-basis: 40%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+}
+.about-experience .experience-box{
+    background-color: var(--bg-clr-2);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.15);
+}
+.about-experience .experience-box .icon{
+    display: inline-block;
+    background-color: var(--primary-base-clr);
+    min-width:50px ;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-experience .experience-box .icon i{
+    font-size: 20px;
+    color: var(--main-heading-clr);
+}
+/* ========== About Section Style Ends ============ */
+
+/* ========== Skills Section Style Start ============ */
+section.skills{
+    width: 100%;
+    padding: 10px 8%;
+    background-color: var(--bg-clr-1);
+}
+.skills .skills-contents{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 25px 80px;
+}
+.skills-contents .skill-box .skill-name{
+    font-size: 17px;
+    color: var(--secondary-heading-clr);
+    padding-bottom: 12px;
+    text-decoration: uppercase;
+    letter-spacing: 1px;
+}
+.skill-box .progress-bar{
+    width: 100%;
+    height: 16px;
+    background-color: var(--bg-clr-2);
+}
+.skill-box .progress-bar .progress-value{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-base-clr);
+}
+.skill-box .progress-bar .progress-value::after{
+    position: absolute;
+    content: attr(value);
+    top: -33px;
+    left: 100%;
+    transform: translateX(-50%);
+    color: var(--text-clr);
+    font-size: 17px;
+}
+.other-skills{
+    margin-top: 40px;
+    background-color: var(--bg-clr-2);
+    height: 70px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.15);
+}
+.other-skills h3{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.other-skills p{
+    margin-top: 7px;
+    letter-spacing: 1px;
+}
+
+/* ========== Skills Section Style Ends ============ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========== About Section Style Ends ============ */
 /*=========== Media Query Starts ===============*/
 @media(max-width:968px){}
 
@@ -251,7 +468,26 @@ section.home{
     }
 }
 
-@media(max-width:768px){}
+@media(max-width:768px){
+    /* About Section */
+    .about .about-contents{
+        flex-direction:column ;
+    }
+    .about-contents .about-info{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .about-contents .about-experience{
+        flex-basis: 100%;
+    }
+    /* Skill Section */
+
+    .skills .skills-contents{
+        grid-template-columns: 1fr;
+        grid-gap: 25px 0px;
+    }
+}
+
 @media(max-width:668px){}
 
 /*=========== Media Query Starts ===============*/
