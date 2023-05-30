@@ -339,21 +339,25 @@
                 </div>
                 <!--   === Contact Details Ends ===   -->
                 <!--   === Contact Form Starts ===   -->
-                <form class="contact-form">
+                <form class="contact-form" onsubmit="sendMail(); reset(); return false">
                     <div class="input-element name-input">
-                        <input type="text" required="required" placeholder="Your Name">
+                        <input type="text" id="name" required="required" placeholder="Your Name">
                     </div>
 
                     <div class="input-element email-input">
-                        <input type="email" required="required" placeholder="Your Email">
+                        <input type="email" id="email" required="required" placeholder="Your Email">
+                    </div>
+
+                    <div class="input-element phone-input">
+                        <input type="number" id="phone" required="required" placeholder="Phone No.">
                     </div>
 
                     <div class="text-area">
-                        <textarea required="required" placeholder="Your Message"></textarea>
+                        <textarea required="required" id="message" placeholder="How Can I Help You ?"></textarea>
                     </div>
 
                     <div class="form-button-container">
-                        <input type="button" value="Send Message" class="btn form-btn">
+                        <input type="submit"  class="btn form-btn">
                     </div>
                 </form>
                 <!--   === Contact Form Ends ===   -->
@@ -373,6 +377,15 @@
 
     <!-- Website Container Ends -->
 
+    <!-- Use smtp js for collecting From Details -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("Up1pY0d-jDAD4VQPc");
+   })();
+</script>
     <script src="script.js"></script>
 
 </body>
