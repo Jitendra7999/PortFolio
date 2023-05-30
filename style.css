@@ -628,7 +628,13 @@ section.page-footer{
     /* Services Section */
     .services-contents .service-box{
         flex-basis: 48%;
+       
     }
+    .projects-contents .projects-box{
+        flex-basis: 48%;
+        margin-top: 25px;
+    }
+
 }
 
 @media(max-width:868px){
@@ -718,6 +724,9 @@ section.page-footer{
 @media(max-width:668px){
        /* Services Section */
        .services-contents .service-box{
+        flex-basis: 100%;
+    }
+    .projects-contents .projects-box{
         flex-basis: 100%;
     }
 }
