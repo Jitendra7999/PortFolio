@@ -39,3 +39,11 @@ function sendMail() {
   emailjs.send(serviceId,templateId,params)
   .then(res=>alert("Your message sent successfully"))
 }
+
+function openProjects() {
+  document.getElementById("all-project").style.width = "100%";
+}
+
+function closeProject() {
+  document.getElementById("all-project").style.width = "0";
+}
