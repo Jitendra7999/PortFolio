@@ -780,6 +780,11 @@ section.page-footer {
     height: 200px;
 }
 
+.hrefLink{
+    text-decoration: none;
+    color:#1e90ff;
+}
+
 /* Open All Project Styling Ends */
 
 /*=========== Media Query Starts ===============*/
